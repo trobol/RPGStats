@@ -2,6 +2,7 @@ package mc.rpgstats.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import mc.rpgstats.command.CheatCommand.CommandType;
 import mc.rpgstats.event.LevelUpCallback;
 import mc.rpgstats.main.RPGStats;
 import net.minecraft.command.argument.EntityArgumentType;

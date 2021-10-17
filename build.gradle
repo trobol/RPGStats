@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.8-SNAPSHOT'
+	id 'fabric-loom' version '0.10-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -31,6 +31,7 @@ repositories {
     maven {
         url "https://maven.nucleoid.xyz/"
     }
+	maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -59,15 +60,21 @@ dependencies {
 	}
 	include "me.shedaniel.cloth:cloth-config-fabric:4.11.24"
 
+	dependencies {
+		implementation 'com.github.arthurbambou:Server-Translations:1d553e9'
+	}
+
 	// Translations
-	modImplementation "fr.catcore:server-translations-api:1.4.5+1.17"
-	include "fr.catcore:server-translations-api:1.4.5+1.17"
+	//modImplementation "fr.catcore:server-translations-api:1.4.5+1.17"
+	//include "fr.catcore:server-translations-api:1.4.5+1.17"
 
 	// Harvest scythes
-	modImplementation "curse.maven:harvestscythes-412225:3350526"
+	compileOnly "curse.maven:harvestscythes-412225:3350526"
 
 	// Harvest
-	modImplementation 'curse.maven:simplerharvest-481720:3307870'
+	compileOnly 'curse.maven:simplerharvest-481720:3307870'
+
+
 }
 
 processResources {
@@ -99,6 +106,7 @@ jar {
 	from "LICENSE"
 }
 
+
 // configure the maven publication
 publishing {
 	publications {
@@ -117,5 +125,6 @@ publishing {
 	repositories {
 		// uncomment to publish to the local maven
 		// mavenLocal()
+
 	}
 }
